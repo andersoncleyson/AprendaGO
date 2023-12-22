@@ -5,15 +5,19 @@ import "fmt"
 var x bool
 
 func main(){
+	x = 10 == 100
 	fmt.Println(x)
-	x = true
+	x = 10 <= 100
 	fmt.Println(x)
-	x = 10 < 100
+	x = 10 >= 100
 	fmt.Println(x)
 	x = 10 != 100
 	fmt.Println(x)
 	x = 10 > 100
 	fmt.Println(x)
+	x = 10 < 100
+	fmt.Println(x)
+
 }
 
 /*
