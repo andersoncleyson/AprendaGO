@@ -4,8 +4,8 @@ import "fmt"
 
 func main(){
 
-	for i := 1; i <= 100; i++ {
-		fmt.Printf("%d\t%b\t%#x\n", i, i, i)
+	for i := 33; i <= 122; i++ {
+		fmt.Printf("%d\t%#x\t%#U\n", i, i, i)
 	}
 	
 }
