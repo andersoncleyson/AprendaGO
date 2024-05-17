@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+	"sync/atomic"
 )
 
 var wg sync.WaitGroup
-var contador int
+var contador int32
 
 const quantidadeDeGoroutinas = 5000
 
@@ -23,10 +24,10 @@ func criarGoroutines (i int){
 	wg.Add(i)
 	for j := 0; j < i; j++ {
 		go func(){
-			v := contador
+			atomic.AddInt32(&contador, 1)
+			v := atomic.LoadInt32(&contador)
 			runtime.Gosched()
-			v++
-			contador = v
+			fmt.Println(v)
 			wg.Done()
 		}()
 	}
