@@ -18,4 +18,12 @@ func soma (i ...int) int {
 	return total
 }
 
+func multiplica(i ...int) {
+	total := 0
 
+	for _, v := range i {
+		total *= v
+	}
+
+	return total
+}
